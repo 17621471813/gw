@@ -1,27 +1,33 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from 'views/Home.vue';
+
+Vue.use(VueRouter);
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+
+}
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    component: Home,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
-]
+     path: '/homeShape',
+     name: 'homeShape',
+     component: () => import('@/views/homeShape.vue'),
+  },
+];
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+const router = new VueRouter({
+  base: '/',
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+  scrollBehavior(to, from, saveTop) { if (saveTop) { return saveTop; } return { x: 0, y: 0 }; },
+});
 
-export default router
+export default router;
