@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from 'views/Home.vue';
+import HomePage from 'views/HomePage.vue';
 
 Vue.use(VueRouter);
 const originalPush = VueRouter.prototype.push
@@ -12,14 +12,30 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'HomePage',
+    component: HomePage,
   },
   {
-     path: '/homeShape',
-     name: 'homeShape',
-     component: () => import('@/views/homeShape.vue'),
+     path: '/productCenter',
+     name: 'productCenter',
+     component: () => import('@/views/productCenter.vue'),
   },
+  {
+    path: '/joinIn',
+    name: 'joinIn',
+    component: () => import('@/views/joinIn.vue'),
+ },
+
+ {
+  path: '/information',
+  name: 'information',
+  component: () => import('@/views/information.vue'),
+},
+{
+  path: '/aboutUs',
+  name: 'aboutUs',
+  component: () => import('@/views/aboutUs.vue'),
+},
 ];
 
 const router = new VueRouter({
