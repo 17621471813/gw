@@ -24,7 +24,8 @@ export default {
   data() {
     return {
       logo: require("@/assets/logo/logo.png"),
-      navList: ["首页", "产品中心", "合作加盟", "咨询信息", "关于我们"],
+      // navList: ["首页", "产品中心", "合作加盟", "资讯信息", "关于我们"],
+      navList: ["首页", "产品中心", "合作加盟", "关于我们"],
       selectIndex: 0,
     };
   },
@@ -33,15 +34,22 @@ export default {
       this.selectIndex = 2;
     })
     let herf = window.location.href;
-    if (herf.indexOf("productCenter") > 0) {
+        if (herf.indexOf("productCenter") > 0) {
       this.selectIndex = 1;
     } else if (herf.indexOf("joinIn") > 0) {
       this.selectIndex = 2;
-    } else if (herf.indexOf("information") > 0) {
+    }else if (herf.indexOf("aboutUs") > 0) {
       this.selectIndex = 3;
-    } else if (herf.indexOf("aboutUs") > 0) {
-      this.selectIndex = 4;
     }
+    // if (herf.indexOf("productCenter") > 0) {
+    //   this.selectIndex = 1;
+    // } else if (herf.indexOf("joinIn") > 0) {
+    //   this.selectIndex = 2;
+    // } else if (herf.indexOf("information") > 0) {
+    //   this.selectIndex = 3;
+    // } else if (herf.indexOf("aboutUs") > 0) {
+    //   this.selectIndex = 4;
+    // }
   },
   methods: {
     navClick(index) {
@@ -56,12 +64,15 @@ export default {
         case 2:
           this.$router.push("/joinIn");
           break;
-        case 3:
-          this.$router.push("/information");
-          break;
-        case 4:
+           case 3:
           this.$router.push("/aboutUs");
           break;
+        // case 3:
+        //   this.$router.push("/information");
+        //   break;
+        // case 4:
+        //   this.$router.push("/aboutUs");
+        //   break;
       }
     },
     toHome () {
@@ -79,7 +90,7 @@ export default {
   display: flex;
   align-items: center;
   box-shadow: 0px 3px 16px 1px rgba(0, 0, 0, 0.05);
-  border-bottom:.01rem solid #DA381B;
+  border-bottom:.02rem solid #DA381B;
   &-left {
     display: flex;
     margin-left: 2.4rem;

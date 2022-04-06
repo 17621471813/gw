@@ -243,6 +243,7 @@ export default {
       }
       .content{
         border-top:.01rem solid #ECECEC;
+        line-height: .3rem;
         text-indent: 2em;
         padding: .6rem 0;
       }

@@ -17,13 +17,12 @@
           <div class="adress-img-right">联系我们</div>
         </div>
         <p>杭州市江干区杭海路601号三堡产业大厦A幢1939室</p>
-        <p>企业邮箱：8888@hzzy888.com</p>
-        <p>企业QQ：88888888</p>
+        <p>企业邮箱：pay@yoliinfo.com</p>
+        <p>客服QQ：352815551</p>
       </div>
     </div>
     <div class="copyright-bottom">
-      Copyright © 2014-2022 优粒 版权所有 All Rights Reserved. 浙ICP
-      23423423423423
+      Copyright © 2014-2022 优粒 版权所有 All Rights Reserved. 浙ICP备2022003452号-1
     </div>
   </div>
 </template>

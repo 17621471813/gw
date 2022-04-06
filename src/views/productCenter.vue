@@ -142,7 +142,7 @@ export default {
   position: relative;
   &-nav {
     position: fixed;
-    top: 0.84rem;
+    top: 0.85rem;
     height: 0.4rem;
     display: flex;
     align-items: center;
