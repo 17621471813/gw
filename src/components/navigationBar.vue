@@ -56,16 +56,16 @@ export default {
       this.selectIndex = index;
       switch (index) {
         case 0:
-          this.$router.push("/");
+          this.$router.push({path:"/"});
           break;
         case 1:
-          this.$router.push("/productCenter");
+          this.$router.push({path:"/productCenter"});
           break;
         case 2:
-          this.$router.push("/joinIn");
+          this.$router.push({path:"/joinIn"});
           break;
            case 3:
-          this.$router.push("/aboutUs");
+          this.$router.push({path:"/aboutUs"});
           break;
         // case 3:
         //   this.$router.push("/information");
