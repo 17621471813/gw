@@ -65,14 +65,14 @@ export default {
     return {
       bannerList: [
         {
+          url: require("@/assets/homePage/banner2.jpg"),
+        },
+        {
+          url: require("@/assets/homePage/banner3.jpg"),
+        },
+         {
           url: require("@/assets/homePage/banner1.png"),
-        },
-        {
-          url: require("@/assets/homePage/banner2.png"),
-        },
-        {
-          url: require("@/assets/homePage/banner3.png"),
-        },
+        }
       ],
       codeCard: require("@/assets/homePage/codeCard.png"),
       appUrl: require("@/assets/homePage/img_app.png"),
@@ -80,16 +80,16 @@ export default {
       achievement: require("@/assets/homePage/achievement.png"),
       blList:[
         {
-          url:require("@/assets/homePage/img_zs01.png"),
+          url:require("@/assets/homePage/img_zs01.jpg"),
         },
           {
-          url:require("@/assets/homePage/img_zs02.png"),
+          url:require("@/assets/homePage/img_zs02.jpg"),
         },
           {
-          url:require("@/assets/homePage/img_zs03.png"),
+          url:require("@/assets/homePage/img_zs03.jpg"),
         },
           {
-          url:require("@/assets/homePage/img_zs04.png"),
+          url:require("@/assets/homePage/img_zs04.jpg"),
         }
       ],
        partnerList:[
@@ -267,6 +267,7 @@ export default {
             img{
               width:100%;
               height: 100%;
+              border-radius: .25rem;
             }
         }
       }

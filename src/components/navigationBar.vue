@@ -32,7 +32,7 @@ export default {
   created() {
     Bus.$on('pro',()=>{
       this.selectIndex = 2;
-    })
+    });
     let herf = window.location.href;
         if (herf.indexOf("productCenter") > 0) {
       this.selectIndex = 1;
@@ -77,6 +77,7 @@ export default {
     },
     toHome () {
       this.$router.push("/");
+      this.selectIndex = 0;
     }
 
   },

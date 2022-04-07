@@ -262,10 +262,10 @@ export default {
       }
       .qrCode {
         display: inline-block;
-        width: 0.87rem;
-        height: 0.87rem;
+        // width: 0.87rem;
+        // height: 0.87rem;
         margin-top: 0.08rem;
-        border: 1px solid red;
+        // border: 1px solid red;
         margin-left: 3.2rem;
       }
     }
