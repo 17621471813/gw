@@ -97,7 +97,7 @@ export default {
   &-top {
     width: 100%;
     height: 2.8rem;
-    background: url("../assets/joinIn/background.png") no-repeat;
+    background: url("../assets/joinIn/background.jpg") no-repeat;
     background-size: 100% 100%;
     display: flex;
     justify-content: center;

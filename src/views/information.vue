@@ -153,7 +153,7 @@ export default {
   padding-bottom: 1rem;
   &-top {
     height: 2.8rem;
-    background: url("../assets/information/background.png") no-repeat;
+    background: url("../assets/information/background.jpg") no-repeat;
     background-size: 100% 100%;
   }
   &-bottom {

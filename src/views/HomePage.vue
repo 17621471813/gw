@@ -10,8 +10,8 @@
     <div class="codeCard">
       <div class="codeCard-left">
         <h6>聚合码牌收款</h6>
-        <p>聚合主流收款方式，多种收款方式</p>
-        <p>实现线上、线下权交易场景覆盖，让您的收款即简单又方便</p>
+        <p>聚合主流收款方式</p>
+        <p>实现线上、线下全交易场景覆盖，让您的收款即简单又方便</p>
         <p class="">产品适用：便利店、小吃店、水果店、菜市场等</p>
       </div>
       <img :src="codeCard" class="codeCard-right" alt="" />
@@ -71,13 +71,13 @@ export default {
           url: require("@/assets/homePage/banner3.jpg"),
         },
          {
-          url: require("@/assets/homePage/banner1.png"),
+          url: require("@/assets/homePage/banner1.jpg"),
         }
       ],
-      codeCard: require("@/assets/homePage/codeCard.png"),
-      appUrl: require("@/assets/homePage/img_app.png"),
-      posUrl: require("@/assets/homePage/img_pos.png"),
-      achievement: require("@/assets/homePage/achievement.png"),
+      codeCard: require("@/assets/homePage/codeCard.jpg"),
+      appUrl: require("@/assets/homePage/img_app.jpg"),
+      posUrl: require("@/assets/homePage/img_pos.jpg"),
+      achievement: require("@/assets/homePage/achievement.jpg"),
       blList:[
         {
           url:require("@/assets/homePage/img_zs01.jpg"),
@@ -161,7 +161,7 @@ export default {
       display: inline-block;
       width: 3.83rem;
       height: 3.76rem;
-      margin-left: 1.5rem;
+      margin-left: 3rem;
     }
   }
   .app {
@@ -171,7 +171,7 @@ export default {
       margin-left: 4rem;
     }
     &-right {
-      margin-left: 1.24rem;
+      margin-left:3.4rem;
       .title {
         display: flex;
         align-items: flex-end;
@@ -228,14 +228,14 @@ export default {
       }
     }
     &-right {
-      margin-left: 1.22rem;
+      margin-left: 3.22rem;
       width: 4.82rem;
       height: 4.65rem;
     }
   }
   .achievement {
     height: 4.75rem;
-    background: url("../assets/homePage/achievement.png") no-repeat;
+    background: url("../assets/homePage/achievement.jpg") no-repeat;
     background-size: 100% 100%;
   }
   .qualifications,
@@ -253,7 +253,7 @@ export default {
   .qualifications {
     &-background {
       height: 6.43rem;
-      background: url("../assets/homePage/qc.png") no-repeat;
+      background: url("../assets/homePage/qc.jpg") no-repeat;
       background-size: 100% 100%;
       dl{
         margin-top:.2rem;

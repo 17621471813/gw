@@ -55,7 +55,7 @@ export default {
 .aboutUs {
   &-top {
     height: 4rem;
-    background: url("../assets/aboutUs/background.png") no-repeat;
+    background: url("../assets/aboutUs/background.jpg") no-repeat;
     background-size: 100% 100%;
     display: flex;
     align-items: center;
@@ -110,7 +110,7 @@ export default {
     }
     &-background {
       height: 6.43rem;
-      background: url("../assets/homePage/qc.png") no-repeat;
+      background: url("../assets/homePage/qc.jpg") no-repeat;
       background-size: 100% 100%;
       dl {
         margin-top: 0.2rem;

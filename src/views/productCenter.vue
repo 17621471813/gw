@@ -15,7 +15,7 @@
       <div class="codeCard"></div>
       <div class="details">
         <h6>聚合码牌收款</h6>
-        <p>聚合主流收款方式，多种收款方式</p>
+        <p>聚合主流收款方式</p>
         <p>实现线上、线下全交易场景覆盖，让你的收款即简单又方便</p>
         <el-button @click="toJoinIn">
           <span>合作加盟</span>
@@ -167,7 +167,7 @@ export default {
   .background {
     margin-top: 0.4rem;
     height: 2.8rem;
-    background: url("../assets/productCenter/background.png") no-repeat;
+    background: url("../assets/productCenter/background.jpg") no-repeat;
     background-size: 100% 100%;
   }
   .cc {
