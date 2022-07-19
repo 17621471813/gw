@@ -114,6 +114,16 @@ export default {
       ],
     };
   },
+  created () {
+  var d = new Date();
+ 
+ var hour= d.getHours();//得到小时数
+  
+ var minute= d.getMinutes();//得到分钟数
+  
+ var second= d.getSeconds();//得到秒
+  console.log('首页：',hour+':'+minute+":"+second)
+  },
   methods: {},
 };
 </script>
