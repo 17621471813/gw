@@ -40,7 +40,7 @@ const routes = [
 
 const router = new VueRouter({
   // base: '/',
-  mode: 'history',
+  // mode: 'history',
   // base: process.env.,
   routes,
   // scrollBehavior(to, from, saveTop) { if (saveTop) { return saveTop; } return { x: 0, y: 0 }; },
