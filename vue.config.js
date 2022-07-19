@@ -10,7 +10,7 @@ function resolve(dir) {
 module.exports = {
   lintOnSave: false,
   publicPath: './',
-  outputDir: 'dist',
+  outputDir: 'website',
   productionSourceMap: false,
   lintOnSave: process.env.NODE_ENV !== 'production',
   devServer: {
