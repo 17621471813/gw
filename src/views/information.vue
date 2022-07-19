@@ -4,7 +4,7 @@
     <div class="information-bottom">
       <dl v-if="!isDetails">
         <dd>
-          <img src="" alt="" />
+          <img src="" lazy alt="" />
           <div @click="toDetails" class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系
@@ -19,7 +19,7 @@
           </div>
         </dd>
         <dd>
-          <img src="" alt="" />
+          <img src="" lazy alt="" />
           <div class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系
@@ -34,7 +34,7 @@
           </div>
         </dd>
         <dd>
-          <img src="" alt="" />
+          <img src="" lazy alt="" />
           <div class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系
@@ -49,7 +49,7 @@
           </div>
         </dd>
         <dd>
-          <img src="" alt="" />
+          <img src="" lazy alt="" />
           <div class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系
@@ -64,7 +64,7 @@
           </div>
         </dd>
         <dd>
-          <img src="" alt="" />
+          <img src=""  lazy alt="" />
           <div class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系
@@ -79,7 +79,7 @@
           </div>
         </dd>
         <dd>
-          <img src="" alt="" />
+          <img src="" lazy alt="" />
           <div class="details">
             <div class="details-title">
               中美双方互相打开了大门就不应再关上总理谈中美关系，中美双方互相打开了大门就不应再关上总理谈中美关系

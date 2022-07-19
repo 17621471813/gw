@@ -19,7 +19,7 @@
       <div class="qualifications-background">
         <dl>
           <dd v-for="(item, index) in blList" :key="index">
-            <img :src="item.url" alt="" />
+            <img :src="item.url" lazy alt="" />
           </dd>
         </dl>
       </div>

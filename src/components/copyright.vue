@@ -2,12 +2,10 @@
   <div class="copyright">
     <div class="copyright-top">
       <div class="logo-wra">
-        <div class="logoName">
-          <div class="logo"></div>
-          <div class="name">官方公众号</div>
-        </div>
-
-        <div class="code"></div>
+        <div class="logo"></div>
+           <div class="oa"></div>
+        <div class="spr"></div>
+        <div class="mch"></div>
       </div>
       <div class="tel">
         <div class="tel-img">
@@ -47,37 +45,51 @@ export default {};
     display: flex;
     align-items: center;
     .logo-wra {
-      .logoName {
-        display: flex;
-        align-items: center;
-        margin-left: 3rem;
-        .logo {
-          width: 0.34rem;
-          height: 0.34rem;
-
-          background: url("../assets/homePage/ic_app.png") no-repeat;
-          background-size: 100% 100%;
-        }
-        .name {
-          margin-left:.05rem;
-           font-size: 0.1rem;
-          font-family: Source Han Sans CN-Regular, Source Han Sans CN;
-          font-weight: 400;
-          color: #ffffff;
-        }
+      display: flex;
+      align-items: center;
+      margin-left: 1.4rem;
+      .logo {
+        width: 1.26rem;
+        height: 0.54rem;
+        margin-left: 0.56rem;
+        background: url("../assets/homePage/logo.png") no-repeat;
+        background-size: 100% 100%;
       }
-      .code {
+      .oa {
         width: 1rem;
         height: 1rem;
-        margin-left: 3rem;
-        margin-top: 0.2rem;
-        background: url("../assets/homePage/btCode.jpg") no-repeat;
+        margin-left: 0.56rem;
+        background: url("../assets/homePage/oa.jpg") no-repeat;
         background-size: 100% 100%;
+        &::after {
+          content: "官方公众号";
+        }
+      }
+
+      .spr {
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.4rem;
+        background: url("../assets/homePage/app.png") no-repeat;
+        background-size: 100% 100%;
+         &::after {
+          content: "盈收收展业版APP";
+        }
+      }
+      .mch{
+           width: 1rem;
+        height: 1rem;
+        margin-left: 0.4rem;
+        background: url("../assets/homePage/mch.png") no-repeat;
+        background-size: 100% 100%;
+         &::after {
+          content: "盈收收APP";
+        }
       }
     }
     .tel {
       margin-bottom: 0.1rem;
-      margin-left: 2.08rem;
+      margin-left: 2.5rem;
       &-img {
         display: flex;
         align-items: center;
@@ -107,8 +119,24 @@ export default {};
         font-weight: 300;
       }
     }
+    .oa,
+    .spr,
+    .mch {
+      &::after {
+        display: block;
+        width: 100%;
+        top: 100%;
+        position: relative;
+        text-align: center;
+        font-size: 0.1rem;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: #fff;
+        margin-top: 5px;
+      }
+    }
     .adress {
-      margin-left: 2.08rem;
+      margin-left: 1.5rem;
       &-img {
         display: flex;
         align-items: center;

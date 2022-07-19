@@ -1,55 +1,43 @@
 <template>
   <div class="productCenter">
-    <ul class="productCenter-nav">
-      <li
-        @click="handClick(index)"
-        :class="{ selectCor: selectIndex == index }"
-        v-for="(item, index) in navList"
-        :key="item+index"
-      >
-        {{ item }}
-      </li>
-    </ul>
     <div class="background"></div>
-    <div v-if="selectIndex == 0" class="cc">
+    <div v-if="rou == 1" class="cc">
       <div class="codeCard"></div>
       <div class="details">
         <h6>聚合码牌收款</h6>
         <p>聚合主流收款方式</p>
         <p>实现线上、线下全交易场景覆盖，让你的收款即简单又方便</p>
-        <el-button @click="toJoinIn">
-          <span>合作加盟</span>
+        <el-button  @click="toJoinIn">
+          合作加盟
           <i class="el-icon-arrow-right"></i>
         </el-button>
       </div>
       <dl class="images">
-        <dd v-for="(item,index) in ccList" :key="item +index">
-          <img :src="item.url" alt="" />
+        <dd v-for="(item, index) in ccList" :key="item + index">
+          <img :src="item.url" lazy alt="" />
         </dd>
       </dl>
     </div>
-    <div v-if="selectIndex == 1" class="app">
+    <div v-if="rou == 0" class="app">
       <div class="app-right"></div>
       <div class="app-left">
         <h6>盈收收APP</h6>
         <p class="explain">不止是收款、在线交易、对账、门店员工</p>
-        <div class="system">
-          <div class="android">
-            <div class="android-icon"></div>
-            <div class="android-down">
-              <p>点击下载</p>
-              <p>Android客户端</p>
-            </div>
+        <div class="down">
+          <div class="code">
+            <img lazy :src="mchAndroidCode" />
+            <span> 扫码下载Android客户端 </span>
           </div>
-          <div class="ipone">
-            <div class="ipone-icon"></div>
-            <div class="ipone-down">
-              <p>点击下载</p>
-              <p>IPhone客户端</p>
-            </div>
+          <div class="code">
+            <img
+              lazy
+              alt=""
+              src="https://api.qrserver.com/v1/create-qr-code?data=https://apps.apple.com/us/app/id1624646068"
+            />
+            <span> 扫码下载iPhone客户端 </span>
           </div>
         </div>
-        <img src="" alt="" class="qrCode" />
+        <img src="" alt="" lazy class="qrCode" />
       </div>
       <div class="app-bottom">
         <div class="img"></div>
@@ -60,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div v-if="selectIndex == 2" class="pos">
+    <div v-if="rou == 2" class="pos">
       <div class="pos-left">
         <h6>智能POS</h6>
         <p>全渠道收款，支持支付宝、微信等主流移动支付收款</p>
@@ -81,17 +69,56 @@
         </div>
       </div>
     </div>
+    <div v-if="rou == 3" class="markeApp">
+      <div class="part">
+        <div class="part-left">
+          <p>盈收收展业版APP</p>
+          <p>服务商管理，商户管理，码牌管理</p>
+          <p>帮组服务商快速管理并发展自己的团队及商户</p>
+          <div class="down">
+            <div class="code">
+              <img lazy :src="androidCode" />
+              <span> 扫码下载Android客户端 </span>
+            </div>
+            <div class="code">
+              <img
+                lazy
+                alt=""
+                src="https://api.qrserver.com/v1/create-qr-code?data=https://apps.apple.com/cn/app/%E7%9B%88%E6%94%B6%E6%94%B6%E5%B1%95%E4%B8%9A%E7%89%88/id1622357088"
+              />
+              <span> 扫码下载iPhone客户端 </span>
+            </div>
+          </div>
+        </div>
+        <div class="part-right">
+          <img :src="appUrl" lazy alt="" />
+        </div>
+      </div>
+      <div class="content">
+        <img :src="cpUrl" alt="" lazy class="content-left" />
+        <div class="content-right">
+          <p>服务商/商户一键入网/进件</p>
+          <p>并实时管理服务商/商户信息</p>
+          <p>
+            轻松搞定服务商/商户入网/进件，再也不用担心因入网不及时而丢失客户
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Bus from 'utils/bus.js';
+import Bus from "utils/bus.js";
 export default {
   name: "ProductCenter",
   data() {
     return {
-      navList: ["聚合码收款", "盈收收APP", "智能POS"],
+      androidCode: "",
+      mchAndroidCode: "",
       selectIndex: 0,
+      cpUrl: require("@/assets/productCenter/img_cp.png"),
+      appUrl: require("@/assets/productCenter/img_app.png"),
       ccList: [
         {
           url: require("@/assets/productCenter/cc2.png"),
@@ -105,14 +132,50 @@ export default {
       ],
     };
   },
-  methods: {
-    handClick(index) {
-      this.selectIndex = index;
+  created() {
+    this.getAndroidCode();
+  },
+  computed: {
+    rou() {
+      return this.$route.query.index;
     },
-    toJoinIn(){
+  },
+  watch: {
+    rou(newVal, oldVal) {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    },
+  },
+  methods: {
+    getAndroidCode() {
+      let url =
+        "https://heimdall.yoliinfo.com/manager/anonymous/system/verInfo";
+      const params = {
+        version: "1.0.0",
+        versionBizTypeEnum: "ANDROID",
+        platform: "SPS",
+      };
+      this.$axios.post(url, params).then((res) => {
+        if (res.data.code == "200") {
+          this.androidCode = `https://api.qrserver.com/v1/create-qr-code?data=${res.data.result.url}`;
+        }
+      });
+      const mchParams = {
+        version: "1.0.0",
+        versionBizTypeEnum: "ANDROID",
+        platform: "MPS",
+      };
+      this.$axios.post(url, mchParams).then((res) => {
+        if (res.data.code == "200") {
+          this.mchAndroidCode = `https://api.qrserver.com/v1/create-qr-code?data=${res.data.result.url}`;
+        }
+      });
+    },
+
+    toJoinIn() {
       this.$router.replace("/joinIn");
-       Bus.$emit("pro");
-    }
+      Bus.$emit("pro");
+    },
   },
 };
 </script>
@@ -134,38 +197,15 @@ export default {
     align-items: center;
     justify-content: center;
     background: #e20606;
+    color:#fff;
     border-radius: 0.2rem;
     i {
       margin-left: 0.1rem;
     }
   }
   position: relative;
-  &-nav {
-    position: fixed;
-    top: 0.85rem;
-    height: 0.4rem;
-    display: flex;
-    align-items: center;
-    padding-left: 12rem;
-    z-index: 999;
-    background: rgba(255, 255, 255);
-    width: 100%;
-    li {
-      margin-right: 0.6rem;
-      font-size: 0.15rem;
-      font-family: Microsoft YaHei-Regular, Microsoft YaHei;
-      font-weight: 400;
-      color: #606060;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    .selectCor {
-      color: #d4361a;
-    }
-  }
+
   .background {
-    margin-top: 0.4rem;
     height: 2.8rem;
     background: url("../assets/productCenter/background.jpg") no-repeat;
     background-size: 100% 100%;
@@ -218,54 +258,35 @@ export default {
         font-family: Source Han Sans CN-Normal, Source Han Sans CN;
         font-weight: 400;
         color: #777777;
-        margin-bottom: 0.43rem;
       }
-      .system {
+      .down {
         display: flex;
-        .android,
-        .ipone {
-          width: 2.15rem;
-          height: 0.68rem;
+        .code {
+          margin-right: 0.38rem;
+          width: 1.8rem;
+          margin-top: 0.4rem;
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          background: #e20606;
-          border-radius: 0.07rem 0.07rem 0.07rem 0.07rem;
-          &:hover {
-            cursor: pointer;
+
+          img {
+            width: 1.8rem;
+            height: 1.8rem;
+            margin-bottom: 0.1rem;
           }
-          &-down {
-            margin-left: 0.1rem;
-            font-size: 0.18rem;
-            font-family: Microsoft YaHei-Light, Microsoft YaHei;
+          span {
+            white-space:nowrap;
+            font-size: 0.14rem;
+            font-family: Source Han Sans CN;
             font-weight: 300;
-            color: #ffffff;
-          }
-        }
-        .ipone {
-          margin-left: 0.39rem;
-          &-icon {
-            width: 0.36rem;
-            height: 0.44rem;
-            background: url("../assets/productCenter/ic_ios.png") no-repeat;
-            background-size: 100% 100%;
-          }
-        }
-        .android {
-          &-icon {
-            width: 0.36rem;
-            height: 0.44rem;
-            background: url("../assets/productCenter/ic_android.png") no-repeat;
-            background-size: 100% 100%;
+            line-height: 34px;
+            color: #1d1d1d;
           }
         }
       }
       .qrCode {
         display: inline-block;
-        // width: 0.87rem;
-        // height: 0.87rem;
         margin-top: 0.08rem;
-        // border: 1px solid red;
         margin-left: 3.2rem;
       }
     }
@@ -298,11 +319,13 @@ export default {
           font-family: Source Han Sans CN-Bold, Source Han Sans CN;
           font-weight: bold;
           color: #e20606;
+          margin-top:.2rem;
         }
         p:last-child {
-          font-size: 0.24rem;
-          color: #777777;
-          margin-top: 0.2rem;
+            font-size: 0.24rem;
+        font-family: Source Han Sans CN-Normal, Source Han Sans CN;
+        font-weight: 400;
+        color: #777777;
         }
       }
     }
@@ -362,6 +385,100 @@ export default {
           font-family: Source Han Sans CN-Normal, Source Han Sans CN;
           font-weight: 400;
           color: #4b4b4b;
+        }
+      }
+    }
+  }
+  .markeApp {
+    .part {
+      width: 100%;
+      height: 5.1rem;
+      display: flex;
+      &-left {
+        margin-left: 3rem;
+        p:nth-child(1) {
+          font-size: 0.36rem;
+          font-family: Source Han Sans CN;
+          font-weight: bold;
+          color: #e20606;
+          margin-top: 0.8rem;
+        }
+        P:nth-child(2) {
+          font-size: 0.24rem;
+          font-family: Source Han Sans CN;
+          font-weight: 300;
+          line-height: 34px;
+          color: #777777;
+          margin-top: 0.1rem;
+        }
+        p:nth-child(3) {
+          font-size: 0.18rem;
+          font-family: Source Han Sans CN;
+          font-weight: 300;
+          line-height: 24px;
+          color: #e20606;
+          margin-top: 0.05rem;
+        }
+        .down {
+          display: flex;
+          .code {
+            margin-right: 0.38rem;
+            width: 1.8rem;
+            margin-top: 0.4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+              width: 1.8rem;
+              height: 1.8rem;
+              margin-bottom: 0.1rem;
+            }
+            span {
+              font-size: 0.14rem;
+              white-space:nowrap;
+              font-family: Source Han Sans CN;
+              font-weight: 300;
+              line-height: 34px;
+              color: #1d1d1d;
+            }
+          }
+        }
+      }
+      &-right {
+        margin-left: 3.46rem;
+        margin-top: -1.4rem;
+        img {
+          width: 3.03rem;
+          height: 6.18rem;
+        }
+      }
+    }
+    .content {
+      width: 100%;
+      height: 5.1rem;
+      background: #f9f9f9;
+      display: flex;
+      &-left {
+        width: 3.05rem;
+        height: 3.76rem;
+        margin-left: 4.09rem;
+        margin-top: 0.79rem;
+      }
+      &-right {
+        margin-left: 1.5rem;
+        margin-top: 1.4rem;
+        p {
+          font-size: 0.36rem;
+          font-family: Source Han Sans CN;
+          font-weight: bold;
+          color: #e20606;
+          margin-bottom: 0.1rem;
+        }
+        p:nth-child(3) {
+          font-size: 0.24rem;
+          font-weight: 400;
+          color: #777777;
         }
       }
     }

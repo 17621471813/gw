@@ -172,6 +172,7 @@ export default {
         width: 1.79rem;
         height: 0.4rem;
         background: #da1e30;
+        color:#fff;
         border-radius: 0.2rem;
          margin-top:.3rem;
       }

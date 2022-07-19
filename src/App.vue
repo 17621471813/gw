@@ -1,45 +1,44 @@
 <template>
   <div id="app">
-    <navigation-bar class="navBar"/>
-    <router-view>
-    </router-view>
-    <copyright-bt/>
+    <navigation-bar class="navBar" />
+    <router-view> </router-view>
+    <copyright-bt />
   </div>
-
 </template>
 
 <script>
 import navigationBar from "@/components/navigationBar.vue";
 import copyrightBt from "@/components/copyright.vue";
 export default {
-  components:{
- navigationBar,
- copyrightBt
+  components: {
+    navigationBar,
+    copyrightBt,
   },
   data() {
-    return {
-      
-    };
+    return {};
   },
- 
+  mounted() {
+    document.dispatchEvent(new Event("render-event"));
+  },
 };
 </script>
 
 <style lang="less">
-*{
+* {
   margin: 0;
   padding: 0;
   list-style: none;
   font-size: 16px;
 }
-#app{
+#app {
   overflow-x: hidden;
-  padding-top:.83rem;
-  .navBar{
+  padding-top: 0.83rem;
+  overflow-y: auto;
+  .navBar {
     position: fixed;
-    background: #FFFFFF;
-    top:0;
-    z-index:999;
+    background: #ffffff;
+    top: 0;
+    z-index: 999;
   }
 }
 </style>

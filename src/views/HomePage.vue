@@ -2,8 +2,8 @@
   <div class="home">
     <div class="carousel">
       <el-carousel height="5.6rem" :interval="5000">
-        <el-carousel-item v-for="(item,index) in bannerList" :key="index">
-          <img class="banner" :src="item.url" alt="" />
+        <el-carousel-item v-for="(item, index) in bannerList" :key="index">
+          <el-image class="banner" :src="item.url" alt="" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -14,10 +14,10 @@
         <p>实现线上、线下全交易场景覆盖，让您的收款即简单又方便</p>
         <p class="">产品适用：便利店、小吃店、水果店、菜市场等</p>
       </div>
-      <img :src="codeCard" class="codeCard-right" alt="" />
+      <el-image lazy :src="codeCard" class="codeCard-right" alt="" />
     </div>
     <div class="app">
-      <img :src="appUrl" alt="" class="app-left" />
+      <el-image lazy :src="appUrl" alt="" class="app-left" />
       <div class="app-right">
         <div class="title">
           <div class="title-img"></div>
@@ -34,26 +34,26 @@
         <p>同时支持储蓄卡、信用卡收款</p>
         <p>产品适用：百货商场、超市、服装行业、医疗行业等</p>
       </div>
-      <img :src="posUrl" alt="" class="pos-right" />
+      <el-image lazy :src="posUrl" alt="" class="pos-right" />
     </div>
     <div class="achievement"></div>
     <div class="qualifications">
       <h6>企业资质</h6>
       <div class="qualifications-background">
         <dl>
-          <dd v-for="(item,index) in blList" :key="index" >
-            <img :src="item.url" alt="">
+          <dd v-for="(item, index) in blList" :key="index">
+            <el-image lazy :src="item.url" alt="" />
           </dd>
         </dl>
       </div>
     </div>
     <div class="partner">
       <h6>合作伙伴</h6>
-    <ul class="wrp">
-        <li v-for="(pr,index) in partnerList" :key="pr+index" class="inside">
-          <img :src="pr.url" alt="">
-        </li>
-    </ul>
+      <dl class="wrp">
+        <dd v-for="(pr, index) in partnerList" :key="pr + index" class="inside">
+          <el-image lazy :src="pr.url" alt="" />
+        </dd>
+      </dl>
     </div>
   </div>
 </template>
@@ -70,49 +70,49 @@ export default {
         {
           url: require("@/assets/homePage/banner3.jpg"),
         },
-         {
+        {
           url: require("@/assets/homePage/banner1.jpg"),
-        }
+        },
       ],
       codeCard: require("@/assets/homePage/codeCard.jpg"),
       appUrl: require("@/assets/homePage/img_app.jpg"),
       posUrl: require("@/assets/homePage/img_pos.jpg"),
       achievement: require("@/assets/homePage/achievement.jpg"),
-      blList:[
+      blList: [
         {
-          url:require("@/assets/homePage/img_zs01.jpg"),
+          url: require("@/assets/homePage/img_zs01.jpg"),
         },
-          {
-          url:require("@/assets/homePage/img_zs02.jpg"),
+        {
+          url: require("@/assets/homePage/img_zs02.jpg"),
         },
-          {
-          url:require("@/assets/homePage/img_zs03.jpg"),
+        {
+          url: require("@/assets/homePage/img_zs03.jpg"),
         },
-          {
-          url:require("@/assets/homePage/img_zs04.jpg"),
-        }
+        {
+          url: require("@/assets/homePage/img_zs04.jpg"),
+        },
       ],
-       partnerList:[
+      partnerList: [
         {
-          url:require("@/assets/homePage/partner1.png"),
+          url: require("@/assets/homePage/partner1.png"),
         },
-          {
-          url:require("@/assets/homePage/partner2.png"),
+        {
+          url: require("@/assets/homePage/partner2.png"),
         },
-          {
-          url:require("@/assets/homePage/partner3.png"),
+        {
+          url: require("@/assets/homePage/partner3.png"),
         },
-          {
-          url:require("@/assets/homePage/partner4.png"),
+        {
+          url: require("@/assets/homePage/partner4.png"),
         },
-           {
-          url:require("@/assets/homePage/partner5.png"),
-        }
-        ,  {
-          url:require("@/assets/homePage/partner6.png"),
-        }
-      ]
-    };  
+        {
+          url: require("@/assets/homePage/partner5.png"),
+        },
+        {
+          url: require("@/assets/homePage/partner6.png"),
+        },
+      ],
+    };
   },
   methods: {},
 };
@@ -171,7 +171,7 @@ export default {
       margin-left: 4rem;
     }
     &-right {
-      margin-left:3.4rem;
+      margin-left: 3.4rem;
       .title {
         display: flex;
         align-items: flex-end;
@@ -255,33 +255,35 @@ export default {
       height: 6.43rem;
       background: url("../assets/homePage/qc.jpg") no-repeat;
       background-size: 100% 100%;
-      dl{
-        margin-top:.2rem;
-        width:14.24rem;
+      dl {
+        margin-top: 0.2rem;
+        width: 14.24rem;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        dd{
-            width:2.96rem;
-            height: 4.53rem;
-            img{
-              width:100%;
-              height: 100%;
-              border-radius: .25rem;
-            }
+        dd {
+          width: 2.96rem;
+          height: 4.53rem;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.25rem;
+          }
         }
       }
     }
   }
-  .partner{
-    .wrp{
-      height:1.67rem;
-      li{
-        display: inline-block;
+  .partner {
+    .wrp {
+      height: 1.67rem;
+      display: flex;
+      justify-content: center;
+      dd {
+        width:1.4rem;
         margin-left:.26rem;
-        img{
-          width:1.4rem;
-          height:.5rem; 
+        img {
+          width: 1.4rem;
+          height: 0.5rem;
         }
       }
     }

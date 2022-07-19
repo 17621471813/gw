@@ -3,12 +3,11 @@ import VueRouter from 'vue-router';
 import HomePage from 'views/HomePage.vue';
 
 Vue.use(VueRouter);
-// const originalPush = VueRouter.prototype.push
-// VueRouter.prototype.push = function push(location) {
-//   console.log(location,this)
-//   return originalPush.call(this, location).catch(err => err)
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
 
-// }
+}
 
 const routes = [
   {
@@ -41,8 +40,8 @@ const routes = [
 
 const router = new VueRouter({
   // base: '/',
-  mode: 'hash',
-  // base: process.env.BASE_URL,
+  mode: 'history',
+  // base: process.env.,
   routes,
   // scrollBehavior(to, from, saveTop) { if (saveTop) { return saveTop; } return { x: 0, y: 0 }; },
 });
