@@ -114,15 +114,20 @@ export default {
       ],
     };
   },
-  created () {
-  var d = new Date();
- 
- var hour= d.getHours();//得到小时数
-  
- var minute= d.getMinutes();//得到分钟数
-  
- var second= d.getSeconds();//得到秒
-  console.log('首页：',hour+':'+minute+":"+second)
+  created() {
+    var d = new Date();
+
+    var hour = d.getHours(); //得到小时数
+
+    var minute = d.getMinutes(); //得到分钟数
+
+    var second = d.getSeconds(); //得到秒
+    console.log("首页：", hour + ":" + minute + ":" + second);
+    if (window.__PRERENDER_INJECTED.foo) {
+      console.log(window.__PRERENDER_INJECTED.foo);
+    } else {
+      console.log(window);
+    }
   },
   methods: {},
 };
@@ -289,8 +294,8 @@ export default {
       display: flex;
       justify-content: center;
       dd {
-        width:1.4rem;
-        margin-left:.26rem;
+        width: 1.4rem;
+        margin-left: 0.26rem;
         img {
           width: 1.4rem;
           height: 0.5rem;
