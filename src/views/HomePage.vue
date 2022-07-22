@@ -123,11 +123,6 @@ export default {
 
     var second = d.getSeconds(); //得到秒
     console.log("首页：", hour + ":" + minute + ":" + second);
-    if (window.__PRERENDER_INJECTED.foo) {
-      console.log(window.__PRERENDER_INJECTED.foo);
-    } else {
-      console.log(window);
-    }
   },
   methods: {},
 };
