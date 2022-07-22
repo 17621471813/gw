@@ -138,13 +138,14 @@ export default {
   width:100vw;
   .carousel {
     .banner {
-      height: 100vw;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
     }
   }
   .codeCard,
   .app,
   .pos {
+    width:100%;
     display: flex;
     align-items: center;
     height: 4.7rem;
