@@ -143,7 +143,8 @@ export default {
   .pos {
     display: flex;
     align-items: center;
-    height: 4.7rem;
+    // height: 4.7rem;
+    height:470px;
   }
   .codeCard {
     &-left {
