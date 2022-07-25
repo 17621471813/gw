@@ -41,8 +41,7 @@ module.exports = {
     },
     externals:{
       'vue': 'Vue',
-      'vue-router': 'VueRouter',
-      'vuex':'Vuex'
+      'element-ui': 'ELEMENT',
     },
     plugins: [
       new PrerenderSPAPlugin({
