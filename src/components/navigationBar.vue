@@ -152,7 +152,8 @@ export default {
   z-index: 999;
   .nav {
     width: 100vw;
-    height: 0.83rem;
+    // height: 0.83rem;
+    height: 83px;
     display: flex;
     align-items: center;
     justify-content: space-between;

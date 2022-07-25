@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="carousel">
-      <el-carousel height="5.6rem" :interval="5000">
+      <el-carousel height="560px" :interval="5000">
         <el-carousel-item v-for="(item, index) in bannerList" :key="index">
           <el-image class="banner" :src="item.url" alt="" />
         </el-carousel-item>
@@ -180,19 +180,25 @@ export default {
   }
   .app {
     &-left {
-      width: 5.16rem;
-      height: 3.95rem;
-      margin-left: 4rem;
+      width:516px;
+      height:395px;
+      margin-left: 400px;
+      // width: 5.16rem;
+      // height: 3.95rem;
+      // margin-left: 4rem;
     }
     &-right {
-      margin-left: 3.4rem;
+      // margin-left: 3.4rem;
+      margin-left:340px;
       .title {
         display: flex;
         align-items: flex-end;
         margin-bottom: 0.2rem;
         &-img {
-          width: 0.6rem;
-          height: 0.6rem;
+          // width: 0.6rem;
+          // height: 0.6rem;
+          width:60px;
+          height: 60px;
           background: url("../assets/homePage/ic_app.png") no-repeat;
           background-size: 100% 100%;
         }
@@ -220,6 +226,7 @@ export default {
   }
   .pos {
     &-left {
+      margin-left:364px;
       margin-left: 3.64rem;
       h6 {
         font-size: 0.36rem;
@@ -242,13 +249,17 @@ export default {
       }
     }
     &-right {
+      margin-left:320px;
+      width:482px;
+      height: 465px;
       margin-left: 3.22rem;
       width: 4.82rem;
       height: 4.65rem;
     }
   }
   .achievement {
-    height: 4.75rem;
+    // height: 4.75rem;
+    height: 475px;
     background: url("../assets/homePage/achievement.jpg") no-repeat;
     background-size: 100% 100%;
   }
@@ -266,7 +277,8 @@ export default {
   }
   .qualifications {
     &-background {
-      height: 6.43rem;
+      // height: 6.43rem;
+      height: 643px;
       background: url("../assets/homePage/qc.jpg") no-repeat;
       background-size: 100% 100%;
       dl {
