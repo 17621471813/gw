@@ -18,7 +18,6 @@ module.exports = {
     open: true,
     https: true
   },
-
   configureWebpack: {
     resolve: {
       alias: {
@@ -39,6 +38,11 @@ module.exports = {
       main2: path.resolve(__dirname, './src/main2.js'),
       main3: path.resolve(__dirname, './src/main3.js'),
       main4: path.resolve(__dirname, './src/main4.js'),
+    },
+    externals:{
+      'vue': 'Vue',
+      'vue-router': 'VueRouter',
+      'vuex':'Vuex'
     },
     plugins: [
       new PrerenderSPAPlugin({
