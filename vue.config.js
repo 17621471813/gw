@@ -40,13 +40,6 @@ module.exports = {
       main3: path.resolve(__dirname, './src/main3.js'),
       main4: path.resolve(__dirname, './src/main4.js'),
     },
-    externals:{
-      'vue':'Vue',
-      'element-ui':'ELEMENT',
-      'vue-router':'VueRouter ',
-      'vuex':'Vuex',
-      'axios': 'axios',
-    },
     plugins: [
       new PrerenderSPAPlugin({
 
