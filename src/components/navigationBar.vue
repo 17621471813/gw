@@ -148,6 +148,7 @@ export default {
 
 <style lang="less" scoped>
 .navigationBar {
+  width: 100vw;
   z-index: 999;
   .nav {
     width: 100vw;

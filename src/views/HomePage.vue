@@ -141,6 +141,7 @@ export default {
   .codeCard,
   .app,
   .pos {
+    width:100%;
     display: flex;
     align-items: center;
     // height: 4.7rem;
