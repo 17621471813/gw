@@ -3,9 +3,9 @@
     function browserResize(){
     
     var w=window.innerWidth;//获取浏览器窗口宽度
-    
+    console.log(w)
     if(w>450){
-    
+            
              document.documentElement.style.fontSize=w/1920*100+"px";
     
     }}

@@ -150,7 +150,7 @@ export default {
 .navigationBar {
   z-index: 999;
   .nav {
-    width: 19.2rem;
+    width: 100vw;
     height: 0.83rem;
     display: flex;
     align-items: center;
