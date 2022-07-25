@@ -5,7 +5,32 @@
  var minute= d.getMinutes();//得到分钟数
   
  var second= d.getSeconds();//得到秒
-  console.log('开始：',hour+':'+minute+":"+second)</script><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel="icon" href="favicon.ico"><title>聚合支付</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></head></html><link href="../css/chunk-vendors.cea76636.css?35386f5b24cffee5838e" rel="stylesheet"><link href="../css/chunk-common.b8220f30.css?35386f5b24cffee5838e" rel="stylesheet"><link href="../css/main1.46841ffc.css?35386f5b24cffee5838e" rel="stylesheet"><body style="margin: 0;padding:0;height: 100vh;"><div id="app"></div><script src="../js/chunk-vendors.6ff1cc64.js?35386f5b24cffee5838e"></script><script src="../js/chunk-common.49991729.js?35386f5b24cffee5838e"></script><script src="../js/main1.ae65a816.js?35386f5b24cffee5838e"></script></body><script>var d = new Date();
+  console.log('开始：',hour+':'+minute+":"+second)
+  (function (){
+
+function browserResize(){
+
+var w=window.innerWidth;//获取浏览器窗口宽度
+console.log('rem生效1')
+if(w>450){
+        
+         document.documentElement.style.fontSize=w/1920*100+"px";
+
+}}
+
+browserResize();
+
+var browserTimer;
+
+window.addEventListener("resize",function(){
+
+clearTimeout(browserTimer);
+
+browserTimer=setTimeout(browserResize,200)
+
+})
+
+})()</script><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"><link rel="icon" href="favicon.ico"><title>聚合支付</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></head></html><link href="../css/chunk-vendors.cea76636.css?fe1095a10aa595816a67" rel="stylesheet"><link href="../css/chunk-common.b8220f30.css?fe1095a10aa595816a67" rel="stylesheet"><link href="../css/main1.46841ffc.css?fe1095a10aa595816a67" rel="stylesheet"><body style="margin: 0;padding:0;height: 100vh;"><div id="app"></div><script src="../js/chunk-vendors.6ff1cc64.js?fe1095a10aa595816a67"></script><script src="../js/chunk-common.20845bef.js?fe1095a10aa595816a67"></script><script src="../js/main1.ae65a816.js?fe1095a10aa595816a67"></script></body><script>var d = new Date();
  
  var hour= d.getHours();//得到小时数
   
