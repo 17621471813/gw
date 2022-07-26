@@ -149,7 +149,8 @@ export default {
   }
   .codeCard {
     &-left {
-      margin-left: 3.45rem;
+      // margin-left: 3.45rem;
+      margin-left:345px;
       h6 {
         font-size: 36px;
         font-family: Source Han Sans CN-Bold, Source Han Sans CN;
@@ -173,9 +174,12 @@ export default {
     }
     &-right {
       display: inline-block;
-      width: 3.83rem;
-      height: 3.76rem;
-      margin-left: 3rem;
+      // width: 3.83rem;
+      // height: 3.76rem;
+      // margin-left: 3rem;
+      width:383px;
+      height: 376px;
+      margin-left:300px;
     }
   }
   .app {
@@ -227,7 +231,6 @@ export default {
   .pos {
     &-left {
       margin-left:364px;
-      margin-left: 3.64rem;
       h6 {
         font-size: 0.36rem;
         font-family: Source Han Sans CN-Bold, Source Han Sans CN;
@@ -252,9 +255,6 @@ export default {
       margin-left:320px;
       width:482px;
       height: 465px;
-      margin-left: 3.22rem;
-      width: 4.82rem;
-      height: 4.65rem;
     }
   }
   .achievement {
@@ -283,13 +283,13 @@ export default {
       background-size: 100% 100%;
       dl {
         margin-top: 0.2rem;
-        width: 14.24rem;
+        width: 1424px;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         dd {
-          width: 2.96rem;
-          height: 4.53rem;
+          width:296px;
+          height:453px;
           img {
             width: 100%;
             height: 100%;
@@ -301,15 +301,15 @@ export default {
   }
   .partner {
     .wrp {
-      height: 1.67rem;
+      height: 167px;
       display: flex;
       justify-content: center;
       dd {
-        width: 1.4rem;
-        margin-left: 0.26rem;
+        width: 140px;
+        margin-left: 26px;
         img {
-          width: 1.4rem;
-          height: 0.5rem;
+          width: 140px;
+          height: 50px;
         }
       }
     }
