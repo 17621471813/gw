@@ -131,6 +131,7 @@ export default {
 
 <style lang="less" scoped>
 .home {
+  font-size: 16px;
   width:100vw;
   .carousel {
     .banner {
